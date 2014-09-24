@@ -1,11 +1,12 @@
 <html ng-app="skillsApp">
-<head>
+	<head>
 	<title>Skill Calculator</title>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="keywords" content="bungie, destiny, skill, calculator">
 	<meta name="description" content="Create and share Destiny subclass setups.">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="classes.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -13,10 +14,19 @@
 <body onmousemove="javascript:mouseXY();" ng-controller="SkillCtrl">
 	<div id="wrapper">
 		<div id="class-list">
-			<span ng-repeat="class in all_classes" ng-click="setClass(class)">{{class.name}}</span>
+			<span ng-repeat="class in all_classes" ng-click="setClass(class)" ng-hide="$odd">{{class.name}}</span>
 		</div>
 		<div>
-			<img class="float-left" id="classImage" ng-src="{{current_class.image}}">
+			<div id="class-images" class="float-left">
+				<div class="float-left subclass-image" ng-click="setClass(getAlternateClass())">
+					<div class="class-label">{{getAlternateClass().subclass}}</div>
+					<img class="float-left" id="inactiveClassImage" ng-src="{{getAlternateClass().image}}">
+				</div>
+				<div class="float-left subclass-image" ng-click="setClass(getAlternateClass())">
+					<div class="class-label">{{current_class.subclass}}</div>
+					<img class="float-left" id="classImage" ng-src="{{current_class.image}}">
+				</div>
+			</div>
 			<div id="class" class="float-left">
 				<h1>{{current_class.subclass}}</h1>
 				<h2>{{current_class.name}} SUBCLASS</h2>
@@ -49,7 +59,10 @@
 				</div>
 			</div>
 		</div>
-		<div id="sheet" ng-class="{locked: locked}" >
+		<div id="clear-all" ng-click="clearAllSkills()">
+			<span>Clear All</span>
+		</div>
+		<div id="sheet" ng-class="{locked: locked}">
 			<section ng-repeat="row in current_class.skills">
 				<div
 					class="skill"

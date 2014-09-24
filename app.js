@@ -1,10 +1,19 @@
 function mouseXY() {
 	var X = event.clientX;
 	var Y = event.clientY;
-	var height = document.getElementById("tooltip").clientHeight;
+
+	var iMaxWidth = window.innerWidth;
+	var iMaxHeight = window.innerHeight;
+
 	var width = document.getElementById("tooltip").clientWidth;
-	document.getElementById("tooltip").style.top= Y - height - 10;
-	document.getElementById("tooltip").style.left=X + 30;
+	var height = document.getElementById("tooltip").clientHeight;
+
+	var iOffset = 30;
+	var xPos = Math.max(0, Math.min(X + iOffset, iMaxWidth - width - iOffset));
+	var yPos = Math.max(0, Math.min(Y - height - iOffset, iMaxHeight - height - iOffset));
+
+	document.getElementById("tooltip").style.top = yPos;
+	document.getElementById("tooltip").style.left = xPos;
 }
 window.onload=mouseXY;
 
@@ -67,6 +76,14 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		// };
 		generate_link();
 	};
+	$scope.getAlternateClass = function() {
+		for(var i=0; i<$scope.all_classes.length; ++i) {
+			if ( $scope.all_classes[i].name==$scope.current_class.name && $scope.all_classes[i].subclass!=$scope.current_class.subclass) {
+				console.log($scope.all_classes[i]);
+				return $scope.all_classes[i];
+			}
+		}
+	};
 	$scope.tooltip = {
 		name: '',
 		description: '',
@@ -97,6 +114,12 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		$location.hash(output);
 	};
 
+	lockSkills = function(bLocked) {
+		$scope.locked = bLocked;
+		var fClass = bLocked ? "add" : "remove";
+		document.getElementById("clear-all").classList[fClass]('locked');
+	};
+
 	decode_link = function(){
 		var input = $location.hash();
 		var c_index = parseInt(input.charAt(input.length-1));
@@ -111,7 +134,9 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 				if (ii=='$hashKey') continue;
 				ii = parseInt(ii);
 				if (input.shift() === '1') $scope.current_class.skills[i][ii].active = true;
-				if (ii === 8 && $scope.current_class.skills[i][ii].active) $scope.locked = true;
+				if (ii === 8 && $scope.current_class.skills[i][ii].active) {
+					lockSkills(true);
+				}
 			}
 		}
 	}
@@ -129,7 +154,7 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		// }
 	};
 	$scope.clearTooltip = function() {
-		$scope.tooltip = {name:'',description:'',binding:''};
+		$scope.tooltip = {name:'',description:''};//,binding:''};
 		// $scope.buffs = {
 		// 	armor: 0,
 		// 	recovery: 0,
@@ -149,20 +174,46 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		var skill = $scope.current_class.skills[row][col];
 		if (col==8) {
 			skill.active = !skill.active;
-			$scope.locked = skill.active;
+			
+			lockSkills(skill.active);
+	
 			generate_link();
 			return true;
 		}
-		else if ($scope.current_class.skills[1][8].active) return true;
+//		else if ($scope.current_class.skills[1][8].active) return true;
 		
-		// deactivate all skills in the clicked column
-		for (var i=0;i<4;i++) {
+		// If we've clicked on a 4-row column
+		var bFourRows = row > 2 ? ( col==0||col==1||col==2 ) : ( col==1||col==2||col==3 );
+
+		var iTarget = bFourRows ? 4 : 3;
+		for (var i = 0 ;i < iTarget; i++) {
+			if ( i == row ) {
+				continue;
+			}
 			var tcol = col;
-			if (row == 3 || i == 3) tcol += 1;
-			if ($scope.current_class.skills[i][tcol]) {
-				// If this is the jump, super, or melee column, do not disable the skill in the first row
-				if (i==0 && (tcol==1||tcol==2||tcol==3)) continue;
+
+			// We have clicked on a skill in a four row column.
+			if ( bFourRows ) {
+				// We don't deactivate the jump, super, or melee skills.
+				if ( i == 0 ) {
+					continue;
+				}
+				// We don't deactivate the jump, super, or melee enhancement skills when clicking on the skill.
+				if ( row == 0 ) {
+					continue;
+				}
+				// We offset the column when clicking on the final skill in the column.
+				if ( row == 3 ) {
+					tcol++;
+				}
+				else if ( i == 3 ) {
+					tcol--;
+				}
+			}
+
+			if ( $scope.current_class.skills[i][tcol] ) {
 				// deactivateBuffs($scope.current_class.skills[i][tcol]);
+
 				$scope.current_class.skills[i][tcol].active = false;
 			}
 		}
@@ -176,11 +227,19 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		$scope.current_class.skills[row][col].active = true;
 
 		generate_link();
-	}
+	};
+	$scope.clearAllSkills = function() {
+		if ( $scope.locked ) { return; }
+		for(var i=0; i<$scope.current_class.skills.length; ++i) {
+			for(var j=0; j<$scope.current_class.skills[i].length; ++j) {
+				$scope.current_class.skills[i][j].active = false;
+			}
+		}
+		generate_link();
+	};
 	$scope.getImagePath = function(i1, i2) {
 		var skill = $scope.current_class.skills[i1][i2];
-		if (skill.image) return skill.image;
-		else return 'skill-icon.png';
+		return $scope.current_class.subclass.toLowerCase() + "/" + skill.name.toLowerCase().replace(/ /g,"_").replace(/'/g, "") + ".png";
 	};
 	$scope.calcLeft = function(width) {
 		return width + 3;
