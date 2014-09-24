@@ -135,7 +135,6 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 				if (ii=='$hashKey') continue;
 				ii = parseInt(ii);
 				if (input.shift() === '1') {
-					console.log("Active: ", i, ii);
 					$scope.current_class.skills[i][ii].active = true;
 				}
 				if (ii === 8 && $scope.current_class.skills[i][ii].active) {
@@ -175,8 +174,6 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 	// }
 
 	$scope.toggleSkill = function(row, col) {
-		console.log("Here: ", row, col);
-
 		var skill = $scope.current_class.skills[row][col];
 		if (col==8) {
 			skill.active = !skill.active;
