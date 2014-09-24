@@ -92,9 +92,6 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 
 	generate_link = function(){
 		var output = '';
-		// first digit is class
-		// second digit is subclass
-		// TODO: Add alternate subclasses.
 
 		// For each row, each skill, add either 0 or 1
 		for (var i in $scope.current_class.skills) {
@@ -107,8 +104,13 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 				output += (skill_row[ii].active ? "1" : "0");
 			}
 		}
-		output += '00';
+
+		// Padding the string to 32 characters.
+		output += '000';
+
 		output = toB64(output);
+
+		// Represent class with the LSB.
 		output += $scope.current_class.index;
 		$location.hash(output);
 	};
@@ -120,7 +122,6 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 	};
 
 	decode_link = function(){
-
 		var input = $location.hash();
 		var c_index = parseInt(input.charAt(input.length-1));
 		var input = fromB64(input.substr(0, input.length-1)).split('');
@@ -133,22 +134,15 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 			for (var ii=0;ii<$scope.current_class.skills[i].length;ii++) {
 				if (ii=='$hashKey') continue;
 				ii = parseInt(ii);
-				if (input.shift() === '1') $scope.current_class.skills[i][ii].active = true;
+				if (input.shift() === '1') {
+					console.log("Active: ", i, ii);
+					$scope.current_class.skills[i][ii].active = true;
+				}
 				if (ii === 8 && $scope.current_class.skills[i][ii].active) {
 					lockSkills(true);
 				}
 			}
 		}
-
-		var iDecodeInterval = setInterval(function() {
-			if ( $('#sheet').children().length > 0 ) {
-				
-				
-
-
-				clearInterval(iDecodeInterval);
-			}
-		}, 10);
 	}
 	
 	if ($location.hash())
@@ -181,6 +175,8 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 	// }
 
 	$scope.toggleSkill = function(row, col) {
+		console.log("Here: ", row, col);
+
 		var skill = $scope.current_class.skills[row][col];
 		if (col==8) {
 			skill.active = !skill.active;
@@ -234,6 +230,7 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		// 	$scope.stats.agility += skill.buffs.agility;
 		// 	$scope.buffs = {armor: 0, recovery: 0, agility: 0};
 		// }
+
 		$scope.current_class.skills[row][col].active = true;
 
 		generate_link();
