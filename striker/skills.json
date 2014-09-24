@@ -1,0 +1,143 @@
+[
+    {
+        "name": "Flashbang Grenade",
+        "description": "An explosive grenade that disorients the enemies it damages. ",
+        "image": "striker/flashbang_grenade.png"
+    },
+    {
+        "name": "Lift",
+        "description": "Jump and then press again while in the air to activate Lift.",
+        "image": "striker/lift.png"
+    },
+    {
+        "name": "Fist of Havoc",
+        "description": "Smash the ground and dissolve nearby enemies in a maelstrom of Arc Light. ",
+        "image": "striker/fist_of_havoc.png"
+    },
+    {
+        "name": "Storm Fist",
+        "description": "A punishing melee attack that deals bonus damage.",
+        "image": "striker/storm_fist.png"
+    },
+    {
+        "name": "Titan Codex I",
+        "description": "Training focused on battle recovery and toughness.",
+        "image": "striker/titan_codex_i.png"
+    },
+    {
+        "name": "Headstrong",
+        "description": "Sprinting increases the leap distance of Fist of Havoc. ",
+        "image": "striker/headstrong.png"
+    },
+    {
+        "name": "Titan Codex IV",
+        "description": "Training focused on all attributes.",
+        "image": "striker/titan_codex_iv.png"
+    },
+    {
+        "name": "Unstoppable",
+        "description": "You are harder to kill while using Fist of Havoc.",
+        "image": "striker/unstoppable.png"
+    }
+],
+[
+    {
+        "name": "Pulse Grenade",
+        "description": "A grenade that periodically damages enemies inside its explosion radius. ",
+        "image": "striker/pulse_grenade.png"
+    },
+    {
+        "name": "Increased Height",
+        "description": "Upgrades Lift to travel to greater heights. ",
+        "image": "striker/increased_height.png"
+    },
+    {
+        "name": "Aftermath ",
+        "description": "Fist of Havoc leaves a damage-dealing field in its wake.",
+        "image": "striker/aftermath_.png"
+    },
+    {
+        "name": "Overload",
+        "description": "Hits with Storm Fist have a chance to immediately reset its cooldown. ",
+        "image": "striker/overload.png"
+    },
+    {
+        "name": "Titan Codex II",
+        "description": "Training focused on speed and toughness.",
+        "image": "striker/titan_codex_ii.png"
+    },
+    {
+        "name": "Aftershocks",
+        "description": "Increases the duration of Pulse Grenade, Lightning Grenade, and Aftermath.",
+        "image": "striker/aftershocks.png"
+    },
+    {
+        "name": "Titan Codex V",
+        "description": "Training focused on maximum battle recovery.",
+        "image": "striker/titan_codex_v.png"
+    },
+    {
+        "name": "Shoulder Charge",
+        "description": "After sprinting for a short time, press to unleash a devastating melee attack. ",
+        "image": "striker/shoulder_charge.png"
+    }
+],
+[
+    {
+        "name": "Lightning Grenade",
+        "description": "A grenade that sticks to any surface, periodically emitting bolts of lightning.",
+        "image": "striker/lightning_grenade.png"
+    },
+    {
+        "name": "Increased Control",
+        "description": "Upgrades Lift for better directional control while in the air.",
+        "image": "striker/increased_control.png"
+    },
+    {
+        "name": "Death from Above",
+        "description": "After jumping, Fist of Havoc can be aimed at enemies below. ",
+        "image": "striker/death_from_above.png"
+    },
+    {
+        "name": "Discharge",
+        "description": "Hits with Storm Fist have a chance to deal area of effect damage around the target. ",
+        "image": "striker/discharge.png"
+    },
+    {
+        "name": "Titan Codex III",
+        "description": "Training focused on battle recovery and speed.",
+        "image": "striker/titan_codex_iii.png"
+    },
+    {
+        "name": "Transfusion",
+        "description": "Kills with Storm Fist immediately trigger health regeneration. ",
+        "image": "striker/transfusion.png"
+    },
+    {
+        "name": "Titan Codex VI",
+        "description": "Training focused on raw speed.",
+        "image": "striker/titan_codex_vi.png"
+    },
+    {
+        "name": "Juggernaut",
+        "description": "After sprinting for a short time, gain a protective shield. ",
+        "image": "striker/juggernaut.png"
+    }
+],
+[
+    {
+        "name": "Catapult",
+        "description": "Upgrades Lift to provide a strong initial burst of momentum.",
+        "image": "striker/catapult.png"
+    },
+    {
+        "name": "Shockwave",
+        "description": "Fist of Havoc unleashes a wave of devastating energy which travels along the ground. ",
+        "image": "striker/shockwave.png"
+    },
+    {
+        "name": "Amplify",
+        "description": "Kills with Storm Fist significantly reduce the cooldown of Fist of Havoc. ",
+        "image": "striker/amplify.png"
+    }
+],

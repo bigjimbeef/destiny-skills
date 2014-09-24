@@ -79,7 +79,6 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 	$scope.getAlternateClass = function() {
 		for(var i=0; i<$scope.all_classes.length; ++i) {
 			if ( $scope.all_classes[i].name==$scope.current_class.name && $scope.all_classes[i].subclass!=$scope.current_class.subclass) {
-				console.log($scope.all_classes[i]);
 				return $scope.all_classes[i];
 			}
 		}

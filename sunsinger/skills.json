@@ -1,0 +1,143 @@
+[
+    {
+        "name": "Solar Grenade",
+        "description": " A grenade that creates a flare of Solar Light which continually damages enemies trapped inside.",
+        "image": "sunsinger/solar_grenade.png"
+    },
+    {
+        "name": "Glide",
+        "description": "Jump and then press again while in the air to activate Glide. ",
+        "image": "sunsinger/glide.png"
+    },
+    {
+        "name": "Radiance",
+        "description": "Fill yourself with Solar Light, dramatically increasing the effectiveness of all your abilities. ",
+        "image": "sunsinger/radiance.png"
+    },
+    {
+        "name": "Scorch",
+        "description": "A powerful melee attack that Ignites enemies, causing damage over time. ",
+        "image": "sunsinger/scorch.png"
+    },
+    {
+        "name": "Arcane Wisdom",
+        "description": "Training focused on battle recovery and speed.",
+        "image": "sunsinger/arcane_wisdom.png"
+    },
+    {
+        "name": "Radiant Will",
+        "description": "Increases the duration of Radiance.",
+        "image": "sunsinger/radiant_will.png"
+    },
+    {
+        "name": "Ancestral Order",
+        "description": "Training focused on all attributes.",
+        "image": "sunsinger/ancestral_order.png"
+    },
+    {
+        "name": "Touch of Flame",
+        "description": "All grenades Ignite enemies, causing damage over time.",
+        "image": "sunsinger/touch_of_flame.png"
+    }
+],
+[
+    {
+        "name": "Firebolt Grenade",
+        "description": "A grenade that unleashes bolts of Solar Light at nearby enemies.",
+        "image": "sunsinger/firebolt_grenade.png"
+    },
+    {
+        "name": "Focused Control",
+        "description": "Upgrades Glide for better directional control while in the air. ",
+        "image": "sunsinger/focused_control.png"
+    },
+    {
+        "name": "Song of Flame",
+        "description": "While active, Radiance reduces all cooldowns for nearby allies. ",
+        "image": "sunsinger/song_of_flame.png"
+    },
+    {
+        "name": "Flame Shield",
+        "description": "Damaging an enemy with Scorch reduces incoming damage for a short time. ",
+        "image": "sunsinger/flame_shield.png"
+    },
+    {
+        "name": "Arcane Spirit",
+        "description": "Training focused on battle recovery and toughness.",
+        "image": "sunsinger/arcane_spirit.png"
+    },
+    {
+        "name": "Viking Funeral",
+        "description": "Enemies you Ignite burn longer and take more damage.",
+        "image": "sunsinger/viking_funeral.png"
+    },
+    {
+        "name": "Chaos Order",
+        "description": "Training focused on raw speed.",
+        "image": "sunsinger/chaos_order.png"
+    },
+    {
+        "name": "Angel of Light",
+        "description": "Aiming your weapon while in the air will hold you in place for a short time.",
+        "image": "sunsinger/angel_of_light.png"
+    }
+],
+[
+    {
+        "name": "Fusion Grenade",
+        "description": "An explosive grenade that causes bonus damage when attached to its target. ",
+        "image": "sunsinger/fusion_grenade.png"
+    },
+    {
+        "name": "Focused Burst",
+        "description": "Upgrades Glide to provide an initial boost of speed.",
+        "image": "sunsinger/focused_burst.png"
+    },
+    {
+        "name": "Radiant Skin",
+        "description": "While active, Radiance reduces incoming damage.",
+        "image": "sunsinger/radiant_skin.png"
+    },
+    {
+        "name": "Solar Wind",
+        "description": "Hitting an enemy with Scorch knocks them back. ",
+        "image": "sunsinger/solar_wind.png"
+    },
+    {
+        "name": "Arcane Force",
+        "description": "Training focused on toughness and speed.",
+        "image": "sunsinger/arcane_force.png"
+    },
+    {
+        "name": "Sunburst",
+        "description": "Killing an enemy with Scorch has a chance to generate Orbs of Light.",
+        "image": "sunsinger/sunburst.png"
+    },
+    {
+        "name": "Divine Order",
+        "description": "Training focused on toughness at all costs.",
+        "image": "sunsinger/divine_order.png"
+    },
+    {
+        "name": "Gift of the Sun",
+        "description": "Gain an additional grenade. ",
+        "image": "sunsinger/gift_of_the_sun.png"
+    }
+],
+[
+    {
+        "name": "Balanced Glide",
+        "description": "Upgrades Glide to provide bonuses to both speed and control.",
+        "image": "sunsinger/balanced_glide.png"
+    },
+    {
+        "name": "Fireborn ",
+        "description": "Radiance can now be activated from beyond the grave. Doing so returns you to life. ",
+        "image": "sunsinger/fireborn_.png"
+    },
+    {
+        "name": "Brimstone",
+        "description": "Killing enemies with Scorch causes them to explode.",
+        "image": "sunsinger/brimstone.png"
+    }
+],
