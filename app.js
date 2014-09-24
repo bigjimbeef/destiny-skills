@@ -120,6 +120,7 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 	};
 
 	decode_link = function(){
+
 		var input = $location.hash();
 		var c_index = parseInt(input.charAt(input.length-1));
 		var input = fromB64(input.substr(0, input.length-1)).split('');
@@ -138,6 +139,16 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 				}
 			}
 		}
+
+		var iDecodeInterval = setInterval(function() {
+			if ( $('#sheet').children().length > 0 ) {
+				
+				
+
+
+				clearInterval(iDecodeInterval);
+			}
+		}, 10);
 	}
 	
 	if ($location.hash())
