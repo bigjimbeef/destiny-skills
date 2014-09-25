@@ -256,25 +256,17 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		
 		var eInput = eSaveArea.children('input[type=text]');
 		eInput.focus();
+
+		var eClickTarget = null;
+		$('body').mousedown(function(e) {
+			eClickTarget = e.toElement;
+		});
 		
-		eInput.on('focusout', function() {
-			var iUnfocusedTime = 0;
-			var iMaxTime = 3000;
-			var iInterval = 100;
-
-			var iUnfocusInterval = setInterval(function() {
-				iUnfocusedTime += iInterval;
-
-				if ( iUnfocusedTime > iMaxTime ) {
-					$scope.closeSaveArea();
-					
-					eInput.off('focusout');					
-					clearInterval(iUnfocusInterval);
-				}
-				else if ( eInput.is(":focus") ) {
-					clearInterval(iUnfocusInterval);
-				}
-			}, iInterval);
+		eInput.on('focusout', function(e) {
+			if ( eClickTarget.id != "save-skills" ) {
+				$scope.closeSaveArea();
+				eInput.off('focusout');	
+			}
 		});
 	}
 	$scope.closeSaveArea = function() {
@@ -285,17 +277,21 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		eLoadArea.addClass('expanded');
 		$('#save-area').removeClass('expanded');
 		
-		$('body').on('click.closeload', function(e, el) {
-			if ( e.toElement.id != $('#load-skills').get(0).id ) {
-				$scope.closeLoadArea();
-				$('body').off('click.closeload');
-			}
-		});
+		$scope.addBodyClickInterceptor($('#load-skills'), "closeload", $scope.closeLoadArea);
 	};
 	$scope.closeLoadArea = function() {
 		$('#load-area').removeClass('expanded');
 	};
 	
+	$scope.addBodyClickInterceptor = function(eTarget, sEventName, fCallback) {
+		$('body').on('click.' + sEventName, function(e, el) {
+			if ( e.toElement.id != eTarget.get(0).id ) {
+				fCallback();
+				$('body').off('click.' + sEventName);
+			}
+		});
+	};
+
 	$scope.saveSkills = function(sSaveFileName) {
 		var sUrlHash = $location.hash();
 		
