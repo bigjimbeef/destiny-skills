@@ -248,4 +248,69 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 	$scope.calcLeft = function(width) {
 		return width + 3;
 	};
+
+	$scope.openSaveArea = function() {
+		var eSaveArea = $('#save-area');
+		eSaveArea.addClass('expanded');
+		$('#load-area').removeClass('expanded');
+		
+		var eInput = eSaveArea.children('input[type=text]');
+		eInput.focus();
+		
+		eInput.on('focusout', function() {
+			var iUnfocusedTime = 0;
+			var iMaxTime = 3000;
+			var iInterval = 100;
+
+			var iUnfocusInterval = setInterval(function() {
+				iUnfocusedTime += iInterval;
+
+				if ( iUnfocusedTime > iMaxTime ) {
+					$scope.closeSaveArea();
+					
+					eInput.off('focusout');					
+					clearInterval(iUnfocusInterval);
+				}
+				else if ( eInput.is(":focus") ) {
+					clearInterval(iUnfocusInterval);
+				}
+			}, iInterval);
+		});
+	}
+	$scope.closeSaveArea = function() {
+		$('#save-area').removeClass('expanded');
+	};
+	$scope.openLoadArea = function() {
+		var eLoadArea = $('#load-area');
+		eLoadArea.addClass('expanded');
+		$('#save-area').removeClass('expanded');
+		
+		$('body').on('click.closeload', function(e, el) {
+			if ( e.toElement.id != $('#load-skills').get(0).id ) {
+				$scope.closeLoadArea();
+				$('body').off('click.closeload');
+			}
+		});
+	};
+	$scope.closeLoadArea = function() {
+		$('#load-area').removeClass('expanded');
+	};
+	
+	$scope.saveSkills = function(sSaveFileName) {
+		var sUrlHash = $location.hash();
+		
+		localStorage.setItem(sSaveFileName, sUrlHash);
+	};
+	
+	$scope.loadSkills = function(sSaveFileName) {
+		var sSavedHash = localStorage.getItem(sSaveFileName);
+		
+		if ( sSavedHash ) {
+			$location.hash(sSavedHash);
+			
+			decode_link();
+			
+			$scope.$apply();
+		}
+	};
 });

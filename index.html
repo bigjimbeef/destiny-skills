@@ -29,7 +29,7 @@
 			</div>
 			<div id="class" class="float-left">
 				<h1>{{current_class.subclass}}</h1>
-				<h2>{{current_class.name}} SUBCLASS</h2>
+				<h2>{{current_class.name}} Subclass</h2>
 			</div>
 		</div>
 		<p id='class-desc'>{{current_class.description}}</p>
@@ -59,8 +59,15 @@
 				</div>
 			</div>
 		</div>
-		<div id="clear-all" ng-click="clearAllSkills()">
-			<span>Clear All</span>
+		<div id="buttons">
+			<span id="clear-all" ng-click="clearAllSkills()">Reset Skills</span>
+			<span id="save-skills" ng-click="openSaveArea()">Save</span>
+			<span id="load-skills" ng-click="openLoadArea()">Load</span>
+		</div>
+		<div id="save-area">
+			<input type="text" placeholder="Enter save name..." />
+		</div>
+		<div id="load-area">
 		</div>
 		<div id="sheet" ng-class="{locked: locked}">
 			<section ng-repeat="row in current_class.skills">
@@ -74,6 +81,7 @@
 					<img ng-src="{{getImagePath($parent.$index, $index)}}">
 				</div>
 		</div>
+		<div id="footer">Thanks to <a href="https://github.com/brandon-bixly">Brandon Bixley</a> for the original version of this site.</div>
 	</div>
 	<div id="tooltip" ng-hide="tooltip.name==''">
 		<div class="itemHeader">
@@ -82,9 +90,6 @@
 		<div class="itemBody">
 			<div class="itemDescription">{{tooltip.description}}</div>
 		</div>
-	</div>
-	<div id="footer">
-		<span>Thanks to <a href="https://github.com/brandon-bixly">Brandon Bixley</a> for the original version of this site.</span>
 	</div>
 </body>
 </html>
