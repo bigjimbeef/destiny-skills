@@ -1,10 +1,4 @@
-destiny-skills
-==============
+Skill calculator for Destiny.
 
-<<<<<<< HEAD
-Skill calculators for Destiny
+Fork of https://github.com/birkholz/destiny-skills.
 
-http://birkholz.github.io/destiny-skills
-=======
-Fork of 
->>>>>>> b60090c0bbd33fe99917b14aeec4bd8ecb7e754f
