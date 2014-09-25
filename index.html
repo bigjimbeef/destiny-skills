@@ -7,6 +7,7 @@
 	<meta name="description" content="Create and share Destiny subclass setups.">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
 	<script type="text/javascript" src="classes.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -68,6 +69,8 @@
 			<input type="text" placeholder="Enter save name..." />
 		</div>
 		<div id="load-area">
+			<div id="load-area-inner">
+			</div>
 		</div>
 		<div id="sheet" ng-class="{locked: locked}">
 			<section ng-repeat="row in current_class.skills">

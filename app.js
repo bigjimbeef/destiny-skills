@@ -255,17 +255,27 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		$('#load-area').removeClass('expanded');
 		
 		var eInput = eSaveArea.children('input[type=text]');
+		eInput.val("");
 		eInput.focus();
 
+		// Check for focus leaving the save name input.
 		var eClickTarget = null;
 		$('body').mousedown(function(e) {
 			eClickTarget = e.toElement;
 		});
-		
 		eInput.on('focusout', function(e) {
-			if ( eClickTarget.id != "save-skills" ) {
+			if ( eClickTarget == null || eClickTarget.id != "save-skills" ) {
 				$scope.closeSaveArea();
 				eInput.off('focusout');	
+			}
+		});
+
+		eInput.on('keypress', function(e) {
+			// Enter
+			if ( e.which == 13 ) {
+				var sName = escape(eInput.val());
+				$scope.saveSkills(sName);
+				$scope.closeSaveArea();
 			}
 		});
 	}
@@ -276,8 +286,63 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		var eLoadArea = $('#load-area');
 		eLoadArea.addClass('expanded');
 		$('#save-area').removeClass('expanded');
-		
-		$scope.addBodyClickInterceptor($('#load-skills'), "closeload", $scope.closeLoadArea);
+
+		var aSaves = [];
+		for ( var i = 0; i < localStorage.length; ++i ) {
+			var sKey = localStorage.key(i);
+			var sUnescapedKey = unescape(sKey);
+			var aMatches = sUnescapedKey.match(/^_save_(.*)$/);
+			if ( aMatches ) {
+				var oContents = JSON.parse(localStorage.getItem(sKey));
+
+				aSaves.push({
+					name: escape(aMatches[1]),
+					date: oContents.date,
+					url: oContents.url,
+					image: oContents.image
+				});
+			}
+		}
+
+		// Clear the load area.
+		$('#load-area').html('');
+
+		var sLoadArea = "<ul id='load-files'>";
+
+		for( var i = 0; i < aSaves.length; ++i ) {
+			var oSave = aSaves[i];
+			
+			var sLi = "<li class='load-file'>";
+
+			var sImage = "<img class='save-image' src='" + oSave.image + "'>";
+			sLi += sImage;
+
+			var sUnEscapedName = unescape(oSave.name);
+			var sRelativeDate = moment.unix(oSave.date).fromNow();
+
+			var sText = 
+				"<div class='save-text'>" +
+					"<div class='save-name'>" + sUnEscapedName + "</div>" +
+					"<div class='save-date'>" + sRelativeDate + "</div>" +
+				"</div>";
+
+			sLi += sText;
+
+			sLi += "</li>";
+
+			sLoadArea += sLi;
+		}
+
+		sLoadArea += "</ul>";
+		$('#load-area').html(sLoadArea);
+
+		// Close the load menu when clicking elsewhere.
+		$('body').on('click.closeload', function(e, el) {
+			if ( e.toElement.id != $('#load-skills').get(0).id ) {
+				$scope.closeLoadArea();
+				$('body').off('click.closeload');
+			}
+		});
 	};
 	$scope.closeLoadArea = function() {
 		$('#load-area').removeClass('expanded');
@@ -292,10 +357,20 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		});
 	};
 
+	$scope.sSaveIdentifier = "_save_";
+
 	$scope.saveSkills = function(sSaveFileName) {
 		var sUrlHash = $location.hash();
-		
-		localStorage.setItem(sSaveFileName, sUrlHash);
+		var iTimestamp = moment().unix();
+
+		var oItem = {
+			url: sUrlHash,
+			date: iTimestamp,
+			image: $scope.current_class.image
+		};
+		var sSave = JSON.stringify(oItem);
+
+		localStorage.setItem($scope.sSaveIdentifier + sSaveFileName, sSave);
 	};
 	
 	$scope.loadSkills = function(sSaveFileName) {

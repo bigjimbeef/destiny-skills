@@ -315,3 +315,38 @@ section {
 #footer a {
 	color: white;
 }
+
+#load-area {
+	background: rgba(0,0,0,0.1);
+}
+
+#load-area li.load-file {
+	width: 100px;
+	text-align: center;
+	padding: 5px;
+	float: left;
+}
+#load-area li.load-file:hover {
+	cursor: pointer;
+}
+
+#load-area li.load-file img.save-image {
+	width: 50px;
+	border-radius: 30px;
+	border: 2px solid #DDD;
+}
+#load-area li.load-file:hover img.save-image {
+	border: 2px solid rgb(245, 220, 86);
+}
+
+#load-area li.load-file .save-name {
+	font-weight: bold;
+	
+	width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#load-area li.load-file .save-date {
+	font-size: 11px;
+}
