@@ -1,0 +1,143 @@
+[
+    {
+        "name": "Vortex Grenade",
+        "description": "A grenade that creates a Vortex which continually damages enemies trapped inside.",
+        "image": "voidwalker/vortex_grenade.png"
+    },
+    {
+        "name": "Glide",
+        "description": "Jump and then press again while in the air to activate Glide.",
+        "image": "voidwalker/glide.png"
+    },
+    {
+        "name": "Nova Bomb",
+        "description": "Hurl an explosive bolt of Void Light at the enemy, disintegrating those caught within its blast.",
+        "image": "voidwalker/nova_bomb.png"
+    },
+    {
+        "name": "Energy Drain",
+        "description": "A powerful melee attack which drains energy from enemies and uses it to reduce the cooldown of your grenade.",
+        "image": "voidwalker/energy_drain.png"
+    },
+    {
+        "name": "Arcane Wisdom",
+        "description": "Training focused on battle recovery and speed.",
+        "image": "voidwalker/arcane_wisdom.png"
+    },
+    {
+        "name": "Annihilate",
+        "description": "Increases the size of explosions created by Nova Bomb and grenades.",
+        "image": "voidwalker/annihilate.png"
+    },
+    {
+        "name": "Ancestral Order",
+        "description": "Training focused on all attributes.",
+        "image": "voidwalker/ancestral_order.png"
+    },
+    {
+        "name": "Vortex Mastery",
+        "description": "Increases the range of Axion Bolt seekers and the duration of the Vortex effect of Nova Bomb and Vortex Grenade.",
+        "image": "voidwalker/vortex_mastery.png"
+    }
+],
+[
+    {
+        "name": "Scatter Grenade",
+        "description": "A grenade that splits into many submunitions and covers a large area with explosions.",
+        "image": "voidwalker/scatter_grenade.png"
+    },
+    {
+        "name": "Focused Control",
+        "description": "Upgrades Glide for better directional control while in the air.",
+        "image": "voidwalker/focused_control.png"
+    },
+    {
+        "name": "Vortex",
+        "description": "Nova Bomb creates a Vortex which continually damages enemies trapped inside.",
+        "image": "voidwalker/vortex.png"
+    },
+    {
+        "name": "Surge",
+        "description": "Damaging an enemy with Energy Drain increases weapon and movement speed.",
+        "image": "voidwalker/surge.png"
+    },
+    {
+        "name": "Arcane Spirit",
+        "description": "Training focused on battle recovery and toughness.",
+        "image": "voidwalker/arcane_spirit.png"
+    },
+    {
+        "name": "Angry Magic",
+        "description": "Nova Bomb tracks enemies.",
+        "image": "voidwalker/angry_magic.png"
+    },
+    {
+        "name": "Chaos Order",
+        "description": "Training focused on raw speed.",
+        "image": "voidwalker/chaos_order.png"
+    },
+    {
+        "name": "Bloom",
+        "description": "Enemies killed by any of your abilities explode.",
+        "image": "voidwalker/bloom.png"
+    }
+],
+[
+    {
+        "name": "Axion Bolt",
+        "description": "A bolt of Void Light which forks into smaller bolts on impact which seek toward enemies.",
+        "image": "voidwalker/axion_bolt.png"
+    },
+    {
+        "name": "Focused Burst",
+        "description": "Upgrades Glide to provide an initial boost of speed.",
+        "image": "voidwalker/focused_burst.png"
+    },
+    {
+        "name": "Shatter",
+        "description": "Nova Bomb splits into three projectiles.",
+        "image": "voidwalker/shatter.png"
+    },
+    {
+        "name": "Life Steal",
+        "description": "Killing an enemy with Energy Drain immediately restores a significant portion of your health.",
+        "image": "voidwalker/life_steal.png"
+    },
+    {
+        "name": "Arcane Force",
+        "description": "Training focused on toughness and speed.",
+        "image": "voidwalker/arcane_force.png"
+    },
+    {
+        "name": "The Hunger",
+        "description": "Increases the duration of the Energy Drain effect.",
+        "image": "voidwalker/the_hunger.png"
+    },
+    {
+        "name": "Divine Order",
+        "description": "Training focused on toughness at all costs.",
+        "image": "voidwalker/divine_order.png"
+    },
+    {
+        "name": "Embrace the Void",
+        "description": "Damaging enemies with Nova Bomb or any grenade triggers the Energy Drain effect.",
+        "image": "voidwalker/embrace_the_void.png"
+    }
+],
+[
+    {
+        "name": "Blink",
+        "description": "A short distance teleport which replaces Glide.",
+        "image": "voidwalker/blink.png"
+    },
+    {
+        "name": "Lance",
+        "description": "Nova Bomb travels farther and faster.",
+        "image": "voidwalker/lance.png"
+    },
+    {
+        "name": "Soul Rip",
+        "description": "Killing an enemy with Energy Drain reduces the cooldown of Nova Bomb.",
+        "image": "voidwalker/soul_rip.png"
+    }
+],

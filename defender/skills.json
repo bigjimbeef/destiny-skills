@@ -1,0 +1,143 @@
+[
+    {
+        "name": "Magnetic Grenade",
+        "description": "A grenade that attaches to enemies and explodes twice.",
+        "image": "defender/magnetic_grenade.png"
+    },
+    {
+        "name": "Lift",
+        "description": "Jump and then press again while in the air to activate Lift.",
+        "image": "defender/lift.png"
+    },
+    {
+        "name": "Ward of Dawn",
+        "description": "Shape Void Light into an indestructible shield to protect you and your allies from harm.",
+        "image": "defender/ward_of_dawn.png"
+    },
+    {
+        "name": "Disintegrate",
+        "description": "Killing an enemy with this powerful melee attack creates a Force Barrier around you which absorbs incoming damage.",
+        "image": "defender/disintegrate.png"
+    },
+    {
+        "name": "Titan Codex I",
+        "description": "Training focused on battle recovery and toughness.",
+        "image": "defender/titan_codex_i.png"
+    },
+    {
+        "name": "Bastion",
+        "description": "Increases the duration of Ward of Dawn.",
+        "image": "defender/bastion.png"
+    },
+    {
+        "name": "Titan Codex IV",
+        "description": "Training focused on all attributes.",
+        "image": "defender/titan_codex_iv.png"
+    },
+    {
+        "name": "Untouchable",
+        "description": "Reduces the cooldown time of Ward of Dawn.",
+        "image": "defender/untouchable.png"
+    }
+],
+[
+    {
+        "name": "Spike Grenade",
+        "description": "A grenade that attaches to any surface and emits a torrent of damaging Void Light.",
+        "image": "defender/spike_grenade.png"
+    },
+    {
+        "name": "Increased Height",
+        "description": "Upgrades Lift to carry you higher.",
+        "image": "defender/increased_height.png"
+    },
+    {
+        "name": "Armor of Light",
+        "description": "While inside Ward of Dawn you and your allies gain significant damage resistance.",
+        "image": "defender/armor_of_light.png"
+    },
+    {
+        "name": "War Machine",
+        "description": "While Force Barrier is active all your weapons reload and ready blindingly fast.",
+        "image": "defender/war_machine.png"
+    },
+    {
+        "name": "Titan Codex II",
+        "description": "Training focused on speed and toughness.",
+        "image": "defender/titan_codex_ii.png"
+    },
+    {
+        "name": "Relentless",
+        "description": "Increases the strength and duration of Force Barrier.",
+        "image": "defender/relentless.png"
+    },
+    {
+        "name": "Titan Codex V",
+        "description": "Training focused on maximum recovery.",
+        "image": "defender/titan_codex_v.png"
+    },
+    {
+        "name": "Iron Harvest",
+        "description": "Heavy Weapon kills have a chance to create Orbs of Light for your allies.",
+        "image": "defender/iron_harvest.png"
+    }
+],
+[
+    {
+        "name": "Suppressor Grenade",
+        "description": "An explosive grenade that prevents enemies from using abilities for a short time.",
+        "image": "defender/suppressor_grenade.png"
+    },
+    {
+        "name": "Increased Control",
+        "description": "Upgrades Lift for better directional control while in the air.",
+        "image": "defender/increased_control.png"
+    },
+    {
+        "name": "Blessing of Light",
+        "description": "Passing through Ward of Dawn grants you and your allies a temporary shield.",
+        "image": "defender/blessing_of_light.png"
+    },
+    {
+        "name": "Gift of Light",
+        "description": "While Force Barrier is active all your melee kills create Orbs of Light.",
+        "image": "defender/gift_of_light.png"
+    },
+    {
+        "name": "Titan Codex III",
+        "description": "Training focused on battle recovery and speed.",
+        "image": "defender/titan_codex_iii.png"
+    },
+    {
+        "name": "Gift of the Void",
+        "description": "As Ward of Dawn takes damage from enemy fire it creates additional Orbs of Light.",
+        "image": "defender/gift_of_the_void.png"
+    },
+    {
+        "name": "Titan Codex VI",
+        "description": "Training focused on raw speed.",
+        "image": "defender/titan_codex_vi.png"
+    },
+    {
+        "name": "Illuminated",
+        "description": "Increases the benefits granted by Blessing of Light and Weapons of Light.",
+        "image": "defender/illuminated.png"
+    }
+],
+[
+    {
+        "name": "Catapult",
+        "description": "Upgrades Lift to provide a strong initial burst of momentum.",
+        "image": "defender/catapult.png"
+    },
+    {
+        "name": "Weapons of Light",
+        "description": "Passing through Ward of Dawn grants you and your allies a temporary increase to weapon damage.",
+        "image": "defender/weapons_of_light.png"
+    },
+    {
+        "name": "Unbreakable",
+        "description": "Force Barrier continually recharges.",
+        "image": "defender/unbreakable.png"
+    }
+],

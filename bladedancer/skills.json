@@ -1,0 +1,143 @@
+[
+    {
+        "name": "Flux Grenade",
+        "description": "An explosive grenade which deals additional damage when attached to enemies. ",
+        "image": "bladedancer/flux_grenade.png"
+    },
+    {
+        "name": "Double Jump",
+        "description": "Jump a second time after leaving the ground. ",
+        "image": "bladedancer/double_jump.png"
+    },
+    {
+        "name": "Arc Blade",
+        "description": "Charge your blade with Arc Light and consume your foes with lightning. ",
+        "image": "bladedancer/arc_blade.png"
+    },
+    {
+        "name": "Blink Strike",
+        "description": "A powerful melee attack with extended range. ",
+        "image": "bladedancer/blink_strike.png"
+    },
+    {
+        "name": "Path Forgotten",
+        "description": "Training focused on toughness and speed.",
+        "image": "bladedancer/path_forgotten.png"
+    },
+    {
+        "name": "Fleet Footed ",
+        "description": "Increases maximum sprint speed and extends slide distance. ",
+        "image": "bladedancer/fleet_footed_.png"
+    },
+    {
+        "name": "Way of the Drifter",
+        "description": "Training focused on all attributes.",
+        "image": "bladedancer/way_of_the_drifter.png"
+    },
+    {
+        "name": "Encore",
+        "description": "Killing an enemy with Arc Blade extends its duration.",
+        "image": "bladedancer/encore.png"
+    }
+],
+[
+    {
+        "name": "Skip Grenade",
+        "description": "A grenade which splits on impact, creating multiple projectiles which seek enemies. ",
+        "image": "bladedancer/skip_grenade.png"
+    },
+    {
+        "name": "Higher Jump",
+        "description": "Upgrades Double Jump for even greater height.",
+        "image": "bladedancer/higher_jump.png"
+    },
+    {
+        "name": "Showstopper",
+        "description": "Press during Arc Blade to damage nearby enemies. ",
+        "image": "bladedancer/showstopper.png"
+    },
+    {
+        "name": "Backstab",
+        "description": "Hitting an enemy from behind with Blink Strike causes significantly more damage.",
+        "image": "bladedancer/backstab.png"
+    },
+    {
+        "name": "Path Forbidden",
+        "description": "Training focused on battle recovery and speed.",
+        "image": "bladedancer/path_forbidden.png"
+    },
+    {
+        "name": "Quick Draw",
+        "description": "Weapons ready immediately.",
+        "image": "bladedancer/quick_draw.png"
+    },
+    {
+        "name": "Way of the Fearless",
+        "description": "Training focused on toughness at all costs.",
+        "image": "bladedancer/way_of_the_fearless.png"
+    },
+    {
+        "name": "Stalker",
+        "description": "Gain invisibility after crouching in place for a short time.",
+        "image": "bladedancer/stalker.png"
+    }
+],
+[
+    {
+        "name": "Arcbolt Grenade",
+        "description": "A grenade that chains bolts of lightning to nearby enemies.",
+        "image": "bladedancer/arcbolt_grenade.png"
+    },
+    {
+        "name": "Better Control",
+        "description": "Upgrades Double Jump for better directional control while in the air. ",
+        "image": "bladedancer/better_control.png"
+    },
+    {
+        "name": "Razor's Edge",
+        "description": "Press during Arc Blade to unleash a destructive wave of energy that travels along the ground. ",
+        "image": "bladedancer/razors_edge.png"
+    },
+    {
+        "name": "Escape Artist",
+        "description": "Hitting an enemy with Blink Strike grants brief invisibility. ",
+        "image": "bladedancer/escape_artist.png"
+    },
+    {
+        "name": "Path Unknown",
+        "description": "Training focused on battle recovery and toughness.",
+        "image": "bladedancer/path_unknown.png"
+    },
+    {
+        "name": "Shadowjack",
+        "description": "Increases the duration of invisibility effects.",
+        "image": "bladedancer/shadowjack.png"
+    },
+    {
+        "name": "Way of the Nomad",
+        "description": "Training focused on maximum battle recovery.",
+        "image": "bladedancer/way_of_the_nomad.png"
+    },
+    {
+        "name": "Hungering Blade",
+        "description": "Kills with Arc Blade and Blink Strike immediately regenerate health.",
+        "image": "bladedancer/hungering_blade.png"
+    }
+],
+[
+    {
+        "name": "Blink",
+        "description": "A short distance teleport that replaces Double Jump.",
+        "image": "bladedancer/blink.png"
+    },
+    {
+        "name": "Vanish",
+        "description": "Press during Arc Blade to disappear from sight. ",
+        "image": "bladedancer/vanish.png"
+    },
+    {
+        "name": "Fast Twitch",
+        "description": "Reduces the cooldown of Blink Strike. ",
+        "image": "bladedancer/fast_twitch.png"
+    }
+],
