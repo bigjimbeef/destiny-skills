@@ -312,7 +312,7 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		for( var i = 0; i < aSaves.length; ++i ) {
 			var oSave = aSaves[i];
 			
-			var sLi = "<li class='load-file'>";
+			var sLi = "<li class='load-file' data-save-url='" + oSave.url + "'>";
 
 			var sImage = "<img class='save-image' src='" + oSave.image + "'>";
 			sLi += sImage;
@@ -335,6 +335,12 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 
 		sLoadArea += "</ul>";
 		$('#load-area').html(sLoadArea);
+
+		$('#load-area').on('click', 'li.load-file', function() {
+			var sUrl = $(this).data('save-url');
+
+			$scope.loadSkills(sUrl);
+		});
 
 		// Close the load menu when clicking elsewhere.
 		$('body').on('click.closeload', function(e, el) {
@@ -373,15 +379,11 @@ skillsApp.controller('SkillCtrl', function($scope, $location) {
 		localStorage.setItem($scope.sSaveIdentifier + sSaveFileName, sSave);
 	};
 	
-	$scope.loadSkills = function(sSaveFileName) {
-		var sSavedHash = localStorage.getItem(sSaveFileName);
+	$scope.loadSkills = function(sHash) {
+		$location.hash(sHash);
 		
-		if ( sSavedHash ) {
-			$location.hash(sSavedHash);
-			
-			decode_link();
-			
-			$scope.$apply();
-		}
+		decode_link();
+		
+		$scope.$apply();
 	};
 });

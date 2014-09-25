@@ -218,7 +218,10 @@ section {
 	height: 30px;
 }
 #load-area.expanded {
-	height: 100px;
+	height: 94px;
+	border-top: 4px solid rgba(245,245,245,0.25);
+	border-bottom: 4px solid rgba(245,245,245,0.25);
+	margin-bottom: 15px;
 }
 #sheet.locked .skill {
 	opacity: 0.6;
@@ -315,9 +318,12 @@ section {
 #footer a {
 	color: white;
 }
-
-#load-area {
+#load-files {
 	background: rgba(0,0,0,0.1);
+	display: inline-block;
+	width: 670px;
+	height: 94px;
+	overflow: hidden;
 }
 
 #load-area li.load-file {
@@ -345,6 +351,7 @@ section {
 	width: 100px;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 #load-area li.load-file .save-date {
